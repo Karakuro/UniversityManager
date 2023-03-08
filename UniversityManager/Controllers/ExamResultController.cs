@@ -85,7 +85,7 @@ namespace UniversityManager.Controllers
         }
 
         [HttpDelete]
-        [Route("/{studentId}/{examId}")]
+        [Route("{studentId}/{examId}")]
         public IActionResult Delete(Guid studentId, Guid examId)
         {
             if (_srv.Delete(examId, studentId))
