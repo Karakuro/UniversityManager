@@ -88,6 +88,7 @@ namespace UniversityManager.Controllers
         }
 
         [HttpDelete]
+        [Route("{id}")]
         public IActionResult Delete(Guid id)
         {
             if(_srv.Delete(id))

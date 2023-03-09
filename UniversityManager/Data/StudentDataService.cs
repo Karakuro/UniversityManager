@@ -73,7 +73,7 @@ namespace UniversityManager.Data
             result = students.Remove(old);
             
             //result = students.RemoveAll(s => s.Id == id) == 1;
-            if(!result)
+            if(result)
                 SaveChanges(students);
             return result;
         }

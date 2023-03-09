@@ -5,33 +5,80 @@
     <title></title>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <script defer src="bootstrap/js/bootstrap.min.js"></script>
-    <script defer src="bootstrap/js/Site.js"></script>
-    <script type="text/javascript">window.location="/swagger"</script>
+    <script defer src="scripts/Site.js"></script>
+    <link href="content/Site.css" rel="stylesheet" />
 </head>
-<body>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    Id
-                </th>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Surname
-                </th>
-                <th>
-                    Fiscal Code
-                </th>
-                <th>
-                    Birth Date
-                </th>
-            </tr>
-        </thead>
-        <tbody id="TableBody">
-            
-        </tbody>
-    </table>
+<body class="container">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">University Management</a>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-3 mb-3">
+            <input type="button" class="btn btn-outline-success" value="Nuovo Studente" onclick="ShowStudentForm()" />
+        </div>
+    </div>
+    <div class="row" id="formSection" hidden>
+        <h1>Studente</h1>
+        <form class="row g-1 needs-validation" id="studentForm" novalidate>
+            <input class="form-control" type="text" id="studentId" hidden disabled />
+            <div class="mb-1">
+                <label class="form-label">Nome</label>
+                <input class="form-control" type="text" id="studentName" placeholder="Mario" required />
+                <div class="invalid-feedback">
+                    Campo obbligatorio
+                </div>
+            </div>
+            <div class="mb-1">
+                <label class="form-label">Cognome</label>
+                <input class="form-control" type="text" id="studentSurname" placeholder="Rossi" required />
+                <div class="invalid-feedback">
+                    Campo obbligatorio
+                </div>
+            </div>
+            <div class="mb-1">
+                <label class="form-label">Codice Fiscale</label>
+                <input class="form-control" type="text" id="studentFiscalCode" placeholder="AAABBB00A00B000A" required />
+                <div class="invalid-feedback">
+                    Campo obbligatorio
+                </div>
+            </div>
+            <div class="mb-1">
+                <label class="form-label">Data di Nascita</label>
+                <input class="form-control" type="date" id="studentBirthDate" placeholder="01/01/2000" required />
+                <div class="invalid-feedback">
+                    Campo obbligatorio
+                </div>
+            </div>
+            <div class="mb-3">
+                <input type="submit" class="btn btn-success" value="Invia" />
+                <input type="button" class="btn btn-light" onclick="ShowStudentForm()" value="Annulla" />
+            </div>
+        </form>
+</div>
+    <div class="row" id="tableSection">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Surname
+                    </th>
+                    <th>
+                        Fiscal Code
+                    </th>
+                    <th>
+                        Birth Date
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="TableBody">
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
